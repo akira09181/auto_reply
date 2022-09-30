@@ -22,8 +22,8 @@ def pre_register(request):
 
 def register(request):
     name = request.GET['name']
-    password = request.Get['password']
+    password = request.GET['password']
     line_id = request.GET['line_id']
-    regist = Users.create(name=name, password=password, line_id=line_id)
+    regist = Users(name=name, password=password, line_id=line_id)
     regist.save()
     return render(request, 'reply/index.html', {})
