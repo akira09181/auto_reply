@@ -46,3 +46,9 @@ def main(request):
             message_creater.create_single_text_message(message['text']))
         line_message.reply(reply_token)
         return HttpResponse("ok")
+
+
+def main_recieve(request):
+    message_to_receive = request.GET('message_to_receive')
+    message_to_return = request.GET('message_to_return')
+    return render(request, 'reply/index.html', {})
